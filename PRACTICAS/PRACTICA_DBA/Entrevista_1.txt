@@ -1,1 +1,22 @@
+# Configuración de Parámetros MySQL/MariaDB
+
+Esta tabla muestra los parámetros de configuración, los valores asignados y una breve explicación del porqué se eligieron dichos valores.
+
+| Parámetro                    | Valor                   | Explicación                                                                 |
+|------------------------------|-------------------------|-----------------------------------------------------------------------------|
+| innodb_buffer_pool_size       | 4G                      | Tamaño de la pool de buffer para manejar grandes cantidades de datos en memoria. |
+| innodb_log_file_size          | 512M                    | Ajustado para reducir la frecuencia de escrituras y mejorar el rendimiento.  |
+| max_connections               | 200                     | Se espera una alta concurrencia de conexiones.                               |
+| query_cache_size              | 64M                     | Tamaño adecuado para mejorar el rendimiento de consultas repetidas.          |
+| table_open_cache              | 1024                    | Aumentado para mejorar la eficiencia en servidores con muchas tablas.        |
+| tmp_table_size                | 128M                    | Para evitar la creación de tablas temporales en disco.                       |
+| max_heap_table_size           | 128M                    | Similar al valor de `tmp_table_size` para manejar mejor las tablas en memoria.|
+| innodb_flush_log_at_trx_commit| 1                       | Garantiza integridad en cada transacción (ideal para ambientes críticos).     |
+| log_bin                       | ON                      | Activado para habilitar la replicación y el punto de recuperación de datos.  |
+| slow_query_log                | ON                      | Activado para identificar consultas lentas y optimizarlas.                   |
+| slow_query_log_file           | /var/log/mysql/slow.log  | Archivo donde se almacenan las consultas lentas.                             |
+| long_query_time               | 2                       | Tiempo en segundos para definir consultas lentas.                            |
+| bind-address                  | 0.0.0.0                 | Escucha en todas las interfaces de red.                                      |
+| innodb_file_per_table         | ON                      | Cada tabla tendrá su propio archivo de datos, mejorando la gestión.          |
+| performance_schema            | OFF                     | Desactivado para evitar sobrecarga en el rendimiento del servidor.           |
 
