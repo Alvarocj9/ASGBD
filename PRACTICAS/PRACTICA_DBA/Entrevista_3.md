@@ -25,5 +25,3 @@ Esta tabla muestra los parámetros de configuración, los valores asignados y un
   - innodb_buffer_pool_size: Se asigna un tamaño considerable para manejar el volumen de lecturas de perfiles, publicaciones y comentarios.
   - innodb_flush_log_at_trx_commit: Se asegura la consistencia inmediata para que los cambios realizados en los perfiles o publicaciones sean visibles rápidamente para otros usuarios.
   - max_connections: Configurado para manejar la concurrencia moderada típica de una red social sin sobrecargar el servidor.
-
-Este conjunto de parámetros está optimizado para garantizar un buen rendimiento en una red social donde las lecturas dominan sobre las escrituras, y la consistencia de los datos es crítica para la experiencia del usuario.
