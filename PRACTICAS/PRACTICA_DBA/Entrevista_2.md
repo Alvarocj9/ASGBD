@@ -27,4 +27,3 @@ Esta tabla muestra los parámetros de configuración, los valores asignados y un
   - query_cache_size: Aumentado para almacenar resultados de consultas repetidas, lo que es ideal en un entorno de análisis con grandes conjuntos de datos.
   - log_bin: Desactivado debido a que la replicación no es crítica en este caso, ya que las escrituras no son frecuentes ni requieren seguimiento detallado.
 
-Este conjunto de configuraciones está optimizado para un entorno de Data Warehouse que se enfoca en la lectura intensiva y análisis de grandes volúmenes de datos históricos.
