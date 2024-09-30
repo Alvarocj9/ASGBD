@@ -26,5 +26,3 @@ Esta tabla muestra los parámetros de configuración, los valores asignados y un
   - max_connections: Se incrementa sustancialmente para permitir que miles de usuarios accedan simultáneamente sin problemas de conexiones limitadas.
   - innodb_flush_log_at_trx_commit: Se establece en 1 para garantizar la integridad de cada transacción, lo cual es crucial en un entorno de comercio electrónico.
   - long_query_time: Se ajusta a 1 segundo, ya que en un entorno con tanta carga, cualquier consulta lenta debe ser identificada y optimizada rápidamente.
-
-Este es un enfoque para maximizar el rendimiento y la seguridad de la base de datos en un entorno con alta concurrencia de usuarios y muchas operaciones de escritura y lectura simultáneas.
