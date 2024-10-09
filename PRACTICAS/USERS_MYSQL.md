@@ -1,10 +1,22 @@
 # EJERCICIOS BÁSICOS DE MYSQL
 ## 1. Indica el nombre de las tablas que aparecen en tu base de datos de mysql.
+![image](https://github.com/user-attachments/assets/5f2d8189-cde6-45e5-aecd-d07ef551d347)
+  - Para ver las tablas que hay en la BBDD pondremos el comando "SHOW tables;". En este caso como no hay ninguna tabla creada dentrpo de la BBDD no nos aparecerá ninguna.
 ## 2. Crea el usuario "Bego" con contraseña "BegiNa" para que pueda acceder desde localhost.
+![image](https://github.com/user-attachments/assets/40932328-abe2-436a-9287-8a11e97c5846)
+  - Para crear el usuario con la contraseña de manera que pueda acceder desde localhost utilizaremos el comando "CREATE USER 'Bego'@'localhost' IDENTIFIED BY 'BegiNa';"
 ## 3. Crea el usuario "Mati" con contraseña "Miti30" para que pueda acceder desde el dominio lasalleinstitucion.es.
+![image](https://github.com/user-attachments/assets/dac09fc6-9b53-49dc-8ed8-4f5c70665dc7)
+  - Para crear el usuario con la contraseña de manera que pueda acceder desde lasalleinstitucion.es utilizaremos el comando "CREATE USER 'Mati'@'lasalleinstitucion.es' IDENTIFIED BY 'Miti30';"
 ## 4. Crea el usuario "Mifi" con contraseña "lopoL45" para que pueda acceder desde el dominio lasalleinstitucion.es.
+![image](https://github.com/user-attachments/assets/3ee1824d-b298-4971-b7bf-f670d0ab425e)
+  - Para crear el usuario con la contraseña de manera que pueda acceder desde lasalleinstitucion.es utilizaremos el comando "CREATE USER 'Mifi'@'lasalleinstitucion.es' IDENTIFIED BY 'lopoL45';"
 ## 5. Muestra los usuarios creados (los que están en la tabla user de la base de datos mysql). Indica la sentencia que has utilizado para mostrar estos usuarios.
+![image](https://github.com/user-attachments/assets/478944ea-f4a1-47c0-82a3-b37335e59447)
+  - Para mostrar los usuarios que hemos creado utilizaremos el comando "SELECT User, Host FROM mysql.user;"
 ## 6. Indica si alguno de estos usuarios ha logrado utilizar alguna tabla o una función. Indica la sentencia que has utilizado para ello.
+![image](https://github.com/user-attachments/assets/dedded6b-5b37-456a-abd3-2168516c12e2)
+  - Para revisar si alguno de los usuarios ha logrado utilizar alguna tabla o función utilizaremos el comando "SELECT * FROM mysql.general_log WHERE user_host LIKE '%Bego%' OR user_host LIKE '%Mati%' OR user_host LIKE '%Mifi%';"
 ## 7. Cambia la contraseña de Mati, de manera que la nueva contraseña sea "nuevacontraseña". Indica la sentencia que has utilizado para ello.
 ## 8. Muestra los privilegios del usuario Mati sobre la tabla usuario que has utilizado para ello.
 ## 9. Muestra los privilegios del usuario Mifi sobre la tabla grupo. Indica la sentencia que has utilizado para ello.
