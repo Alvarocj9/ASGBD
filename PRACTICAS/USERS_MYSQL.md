@@ -36,15 +36,53 @@
 ![image](https://github.com/user-attachments/assets/bdae947d-ea81-4527-a913-2ed92320aa68)
   - Para asignar a Mati el permiso de borrado dobre la tabla grupo utilizaremos el comando "GRANT DELETE ON users_mysql.grupo TO 'Mati'@'lasalleinstitucion.es';"
 ## 13. Crea el usuario Crispula con contraseña "rosita" para que pueda acceder desde el dominio lasalleinstitucion.es y con permisos de lectura, actualización y borrado sobre las tablas usuario, grupo y comentario. Concede además permisos a Crispula para que pueda conceder sus permisos a otros usuarios.
+![image](https://github.com/user-attachments/assets/d1a3ebff-0566-497f-8697-3641aab8cdf6)
+![image](https://github.com/user-attachments/assets/8459b35e-64f8-42c1-a0ec-43e7398481bc)
+  - Para crear el usuario Crispula con la contraseña rosita, así como conceder permisos y demás funciones que se solucitan utilizaremos,los siguientes comandos:
+      - 'CREATE USER 'Crispula'@'lasalleinstitucion.es' IDENTIFIED BY 'rosita';'
+      - 'grant select, update, delete on users_mysql.usuario to 'Crispula'@'lasalleinstitucion.es';'
+      - 'grant select, update, delete on users_mysql.grupo to 'Crispula'@'lasalleinstitucion.es';'
+      - 'grant select, update, delete on users_mysql.comentario to 'Crispula'@'lasalleinstitucion.es';'
+      - 'grant grant option on users_mysql.* to 'Crispula'@'lasalleinstitucion.es';'
 ## 14. Indica si el usuario Crispula ha utilizado alguna tabla.
+![image](https://github.com/user-attachments/assets/88f0baba-d180-4b79-b7e6-75f194df5d48)
+  - Para verificar si Crispula ha utilizado alguna tabla utilizaremos el comando 'SELECT * FROM mysql.general_log WHERE user_host LIKE '%Crispula%';'
 ## 15. Inserta un registro en una tabla comentario. Actualiza un registro de la tabla grupo. Muestra las sentencias y su resultado al ejecutarlas sobre la base de datos de la red social.
+![image](https://github.com/user-attachments/assets/06c2a516-ea0a-4652-8199-69f9949ebb1c)
+  - Para insertar un registro en la tabla comentario y actualizar el registro de la tabla grupo utilizaremos los siguientes comandos:
+      - INSERT INTO comentario (contenido) VALUES ('Nuevo comentario');
+      - UPDATE grupo SET nombre = 'Nuevo nombre' WHERE id = 1;
 ## 16. Elimina el registro creado por Crispula en la tabla usuario a Bego. Muestra la sentencia utilizada y el resultado.
+![image](https://github.com/user-attachments/assets/985234ba-32cd-419a-aa79-10da5a2466d2)
+  - Para eliminar el registro creado por Crispula en la tabla usuario a Bego utilizaremos el comando 'DELETE FROM usuario WHERE nombre = 'Bego''
 ## 17. Cambia el comentario de Mati a un texto donde se mencione que ha hablado bien del grupo a Mati. Muestra la sentencia utilizada con el usuario de mysql.
+![image](https://github.com/user-attachments/assets/b8a1cb4d-4498-49d9-bd01-e15d140da1be)
+  - Para cambiar el comentario de mati utilizaremos el comando 'UPDATE comentario SET contenido = 'Mati ha hablado bien del grupo a Mati' WHERE id = (SELECT id FROM comentario WHERE autor = 'Mati');'
 ## 18. Vuelve a consultar con el usuario de mysql.
+![image](https://github.com/user-attachments/assets/1707e527-0fad-4a83-b5db-c13255a52898)
+  - Para volver a consultar con el usuario de mysql utilizaremos el comando 'SELECT * FROM comentario WHERE autor = 'Mati';'
 ## 19. Inserta tres comentarios sobre tres grupos distintos en la base de datos de la red social a Mati, Bego y Crispula. Muestra las sentencias y su ejecución.
+![image](https://github.com/user-attachments/assets/704a9ca6-fe20-4cad-a980-fccbf023e491)
+  - Para insertar tres comentarios sobre tres grupos distintos utilizaremos los siguientes comandos:
+      - 'INSERT INTO comentario (grupo_id, contenido) VALUES (1, 'Comentario en grupo 1');'
+      - 'INSERT INTO comentario (grupo_id, contenido) VALUES (2, 'Comentario en grupo 2');'
+      - 'INSERT INTO comentario (grupo_id, contenido) VALUES (3, 'Comentario en grupo 3');'
 ## 20. Inserta dos comentarios realizados en dos grupos distintos en la base de datos de la red social a Bego. Muestra las sentencias y su ejecución.
+![image](https://github.com/user-attachments/assets/b0dd390d-c89a-49f8-adf5-3487fe681229)
+  - Para insertar dos comentarios realizados en dos grupos distintos a Bego utilizaremos los siguientes comandos:
+      - 'INSERT INTO comentario (grupo_id, contenido) VALUES (1, 'Comentario de Bego en grupo 1');'
+      - 'INSERT INTO comentario (grupo_id, contenido) VALUES (2, 'Comentario de Bego en grupo 2');'
 ## 21. Muestra los permisos otorgados al usuario Crispula en la base de datos de la red social. Indica la sentencia que has utilizado para ello y los resultados tras otorgar los permisos.
+![image](https://github.com/user-attachments/assets/c7145c26-ac18-403d-95ef-20fdbfc5207a)
+  - Para ver los permisos otorgados al usuario Crispula utilizaremos el siguiente comando: 'SHOW GRANTS FOR 'Crispula'@'lasalleinstitucion.es';'
 ## 22. Elimina los permisos otorgados a Crispula sobre la tabla usuario de la red social. Muestra la sentencia utilizada para ello y los resultados tras borrar los permisos.
+![image](https://github.com/user-attachments/assets/ba9b472e-3297-4999-a8eb-59d440a7fa65)
+  - Para eliminar todos los permisos otorgados a Crispula sobre la tabla usuario utilizaremos el comando 'REVOKE ALL PRIVILEGES ON users_mysql.usuario FROM 'Crispula'@'lasalleinstitucion.es';'
 ## 23. ¿Es necesario hacer FLUSH PRIVILEGES después de la sentencia anterior? Explica el porqué y para qué sirve FLUSH PRIVILEGES.
+  - No es necesario. MySQL aplica los cambios inmediatamente. FLUSH PRIVILEGES solo se necesita cuando se modifican manualmente los archivos de privilegios.
 ## 24. ¿Puedo utilizar la función PASSWORD con GRANT? Justifica tu respuesta.
+  - No, la función PASSWORD se utiliza internamente por MySQL para cifrar contraseñas y no es necesaria con GRANT, ya que este gestiona las contraseñas automáticamente con IDENTIFIED BY.
 ## 25. Elimina el usuario Mifi. Muestra la sentencia utilizada y el resultado de su ejecución.
+![image](https://github.com/user-attachments/assets/9f6c0a5f-de3a-4706-bfae-c52bd0b08d77)
+![image](https://github.com/user-attachments/assets/64e5e755-5a0e-41aa-9e1c-245a82997ce7)
+  - Para eliminar al usuario Mifi utilizaremos el coamndo 'DROP USER 'Mifi'@'lasalleinstitucion.es';'
