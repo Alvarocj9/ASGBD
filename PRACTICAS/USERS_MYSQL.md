@@ -18,6 +18,8 @@
 ![image](https://github.com/user-attachments/assets/dedded6b-5b37-456a-abd3-2168516c12e2)
   - Para revisar si alguno de los usuarios ha logrado utilizar alguna tabla o función utilizaremos el comando "SELECT * FROM mysql.general_log WHERE user_host LIKE '%Bego%' OR user_host LIKE '%Mati%' OR user_host LIKE '%Mifi%';"
 ## 7. Cambia la contraseña de Mati, de manera que la nueva contraseña sea "nuevacontraseña". Indica la sentencia que has utilizado para ello.
+![image](https://github.com/user-attachments/assets/86faa773-97f1-4dea-a2e6-4a89d4334a1d)
+  - Para cambiar la contraseña de Mati a otra nueva 
 ## 8. Muestra los privilegios del usuario Mati sobre la tabla usuario que has utilizado para ello.
 ## 9. Muestra los privilegios del usuario Mifi sobre la tabla grupo. Indica la sentencia que has utilizado para ello.
 ## 10. Concede permisos al usuario Bego de lectura y actualización sobre la tabla usuario.
