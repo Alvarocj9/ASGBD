@@ -55,9 +55,9 @@
 ## 16. Elimina el registro creado por Crispula en la tabla usuario a Bego. Muestra la sentencia utilizada y el resultado.
 ![image](https://github.com/user-attachments/assets/985234ba-32cd-419a-aa79-10da5a2466d2)
   - Para eliminar el registro creado por Crispula en la tabla usuario a Bego utilizaremos el comando 'DELETE FROM usuario WHERE nombre = 'Bego''
-## 17. Concede permiso de borrado sobre la tabla usuaria a Bego. Muestra la sentencia utilizada y el resultado de su ejecución.
-![image](https://github.com/user-attachments/assets/4cdc216f-a964-4239-835b-9590738f822e)
-  - Para coneceder permisos de borrado sobre la tabla usuario a Bego utilizaremos el comando 'GRANT DELETE ON base_de_datos.usuario TO 'Bego'@'localhost';'
+## 17. Concede permiso de borrado sobre la tabla grupo a Bego. Muestra la sentencia utilizada y el resultado de su ejecución.
+![image](https://github.com/user-attachments/assets/a9ffda96-5864-4c14-8002-8919fc165602)
+  - Para coneceder permisos de borrado sobre la tabla usuario a Bego utilizaremos el comando 'GRANT DELETE ON base_de_datos.grupo TO 'Bego'@'localhost';'
 ## 18. Vuelve a consultar con el usuario de mysql.
 ![image](https://github.com/user-attachments/assets/1707e527-0fad-4a83-b5db-c13255a52898)
   - Para volver a consultar con el usuario de mysql utilizaremos el comando 'SELECT * FROM comentario WHERE autor = 'Mati';'
