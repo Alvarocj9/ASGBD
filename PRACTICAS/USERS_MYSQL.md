@@ -29,9 +29,11 @@
 ## 10. Muestra los privilegios del usuario con el que te ha logado. Indica la sentencia que has utilizado para ello.
 ![image](https://github.com/user-attachments/assets/7ad09b86-ef57-48be-a2df-cc449709abf9)
   - Para mostrar los privilegios del usuario con el que nos hemos logado deberemos utilizar el comando "SHOW GRANTS FOR CURRENT_USER;"
-## 11. Concede permisos al usuario Bego de lectura sobre la tabla grupo. Indica las sentencias y sus efectos sobre la base de datos de la red social.
-![image](https://github.com/user-attachments/assets/7b4d0f47-6266-43e0-bd48-277578980f7d)
-  - Para conceder permisos al usario Bego de lectura sobre la tabla grupo primero deberemos crear dicha tabla y después utilizar el comando "GRANT SELECT ON users_mysql.grupo TO 'Bego'@'localhost';"
+## 11. Conéctate como Bego y lanza una sentencia SELECT y UPDATE sobre la tabla usuario. Lanza también una sentencia DELETE. Muestra las sentencias y sus efectos sobre la base de datos de la red social.
+![image](https://github.com/user-attachments/assets/e1cb0759-56cf-4b0c-9e08-01e69738a2cc)
+  - Para conceder permisos al usario Bego de lectura sobre la tabla grupo primero deberemos crear dicha tabla y después utilizar los comandos:
+      - "GRANT SELECT ON users_mysql.grupo TO 'Bego'@'localhost';"
+      - "GRANT SELECT, UPDATE ON base_de_datos.usuario TO 'Bego'@'localhost';"
 ## 12. Indica la sentencia para asignar a Mati el borrado sobre la tabla grupo.
 ![image](https://github.com/user-attachments/assets/bdae947d-ea81-4527-a913-2ed92320aa68)
   - Para asignar a Mati el permiso de borrado dobre la tabla grupo utilizaremos el comando "GRANT DELETE ON users_mysql.grupo TO 'Mati'@'lasalleinstitucion.es';"
@@ -44,21 +46,24 @@
       - 'grant select, update, delete on users_mysql.grupo to 'Crispula'@'lasalleinstitucion.es';'
       - 'grant select, update, delete on users_mysql.comentario to 'Crispula'@'lasalleinstitucion.es';'
       - 'grant grant option on users_mysql.* to 'Crispula'@'lasalleinstitucion.es';'
-## 14. Indica si el usuario Crispula ha utilizado alguna tabla.
-![image](https://github.com/user-attachments/assets/88f0baba-d180-4b79-b7e6-75f194df5d48)
-  - Para verificar si Crispula ha utilizado alguna tabla utilizaremos el comando 'SELECT * FROM mysql.general_log WHERE user_host LIKE '%Crispula%';'
+## 14. Conéctate con el usuario Crispula.
+![image](https://github.com/user-attachments/assets/09e611b6-7806-432c-a236-f94890a4bb1c)
+  - Para conectarnos como Crispula utilizaremos el comando "mysql -u Crispula -p"
 ## 15. Inserta un registro en una tabla comentario. Actualiza un registro de la tabla grupo. Muestra las sentencias y su resultado al ejecutarlas sobre la base de datos de la red social.
 ![image](https://github.com/user-attachments/assets/06c2a516-ea0a-4652-8199-69f9949ebb1c)
   - Para insertar un registro en la tabla comentario y actualizar el registro de la tabla grupo utilizaremos los siguientes comandos:
       - INSERT INTO comentario (contenido) VALUES ('Nuevo comentario');
       - UPDATE grupo SET nombre = 'Nuevo nombre' WHERE id = 1;
-## 16. Elimina el registro creado por Crispula en la tabla usuario a Bego. Muestra la sentencia utilizada y el resultado.
-![image](https://github.com/user-attachments/assets/985234ba-32cd-419a-aa79-10da5a2466d2)
-  - Para eliminar el registro creado por Crispula en la tabla usuario a Bego utilizaremos el comando 'DELETE FROM usuario WHERE nombre = 'Bego''
-## 17. Concede permiso de borrado sobre la tabla grupo a Bego. Muestra la sentencia utilizada y el resultado de su ejecución.
+## 16. Concede permiso de borrado sobre la tabla grupo a Bego. Muestra la sentencia utilizada y el resultado de su ejecución.
 ![image](https://github.com/user-attachments/assets/a9ffda96-5864-4c14-8002-8919fc165602)
   - Para coneceder permisos de borrado sobre la tabla usuario a Bego utilizaremos el comando 'GRANT DELETE ON base_de_datos.grupo TO 'Bego'@'localhost';'
-## 18. Vuelve a consultar con el usuario de mysql.
+## 17. Concede permisos de lectura y actualización sobre la tabla grupo a Mati.
+![image](https://github.com/user-attachments/assets/74b556f6-6871-40a3-8af5-8b7a0a0b4e54)
+![image](https://github.com/user-attachments/assets/b3ab61cf-7db1-41e4-88a2-281092befc64)
+  - Para conceder permisos de lectura y atualización sobre la tabla grupo a Mati con los siguientes comandos:
+      - "GRANT SELECT, UPDATE ON users_mysql.grupo TO 'Mati'@'lasalleinstitucion.es';"
+      - "show grants for 'Mati'@'lasalleinstitucion.es';"
+## 18. Vuelve a conectarte con el usuario de mysql.
 ![image](https://github.com/user-attachments/assets/1707e527-0fad-4a83-b5db-c13255a52898)
   - Para volver a consultar con el usuario de mysql utilizaremos el comando 'SELECT * FROM comentario WHERE autor = 'Mati';'
 ## 19.Concede permisos totales sobre todas las tablas de la base de datos de la red social a Mifi. Muestra la sentencia utilizada y el resultado de su ejecución.
